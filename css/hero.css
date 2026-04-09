@@ -1,0 +1,115 @@
+/* ============================================================
+   hero.css — Sección principal (primera pantalla)
+   ============================================================ */
+
+.hero {
+  background: var(--color-black);
+  padding: 80px 24px 64px;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 18px;
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 7vw, 68px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+.hero__title .accent {
+  color: var(--color-gold);
+}
+
+.hero__desc {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  max-width: 500px;
+  margin: 0 auto 20px;
+  line-height: 1.75;
+}
+
+/* Rating badge */
+.hero__rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.hero__rating-score {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-gold-light);
+}
+
+.hero__rating-label {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.hero__logo {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* CTA buttons */
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---- Métricas debajo del hero ---- */
+.metrics {
+  background: var(--color-black-soft);
+  padding: 40px 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.metric-card {
+  padding: 24px 16px;
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.metric-card__number {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.metric-card__label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .hero { padding: 56px 20px 48px; }
+  .metrics__grid { grid-template-columns: repeat(2, 1fr); }
+}
