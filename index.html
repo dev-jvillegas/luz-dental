@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Luz Dental Consultorio — Atención dental de calidad en León, Guanajuato. Implantes, ortodoncia, diseño de sonrisa y más. Llámanos: 477 216 3979." />
-  <link rel="icon" type="image/png" href="img/logo.png" />
   <title>Luz Dental Consultorio | León, Gto.</title>
 
   <!-- Font Awesome Free -->
@@ -18,62 +17,106 @@
 </head>
 <body>
 
-  <!-- ========================================================
-       NAVBAR
-       ======================================================== -->
-  <header>
-    <nav class="navbar" role="navigation" aria-label="Menú principal">
+<!-- ============================================================
+     POPUP DE PROMOCIONES
+     Para agregar imagen: reemplaza el bloque .popup-placeholder
+     con: <img src="img/promo.jpg" alt="Promoción" class="popup-img" />
+     ============================================================ -->
+<div class="popup-overlay hidden" id="promo-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup-box">
+    <button class="popup-close" id="popup-close" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
 
-      <!-- Marca / Logo -->
-      <a class="navbar__brand" href="#inicio" aria-label="Luz Dental - Inicio">
-        <div class="navbar__brand-text">
-          <span class="navbar__brand-name">Luz Dental</span>
-          <span class="navbar__brand-sub">Consultorio</span>
-        </div>
-      </a>
+    <!-- PLACEHOLDER — cuando tengas imagen del descuento, reemplaza este bloque -->
+    <div class="popup-placeholder">
+      <i class="fa-solid fa-tag"></i>
+      <p>Promoción del mes</p>
+    </div>
+    <!-- FIN PLACEHOLDER -->
 
-      <!-- Acciones derecha -->
-      <div class="navbar__actions">
-        <button
-          class="navbar__burger"
-          id="burger"
-          aria-controls="navbar-menu"
-          aria-expanded="false"
-          aria-label="Abrir menú"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    <div class="popup-body">
+      <h3 id="popup-title">¡Aprovecha nuestras promociones!</h3>
+      <p>Consulta nuestras ofertas especiales del mes. Agenda tu cita y obtén descuentos exclusivos.</p>
+      <a
+        class="btn-gold"
+        href="https://wa.me/524772163979"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Ver promociones por WhatsApp</a>
+    </div>
+  </div>
+</div>
 
-        <div class="navbar__menu" id="navbar-menu" role="list">
-          <a class="navbar__phone" href="tel:4772163979" role="listitem">477 216 3979</a>
-          <a
-            class="btn-gold"
-            href="https://wa.me/524772163979"
-            target="_blank"
-            rel="noopener noreferrer"
-            role="listitem"
-          >WhatsApp</a>
-        </div>
+
+<!-- ============================================================
+     BURBUJA WHATSAPP — siempre visible
+     ============================================================ -->
+<a
+  class="whatsapp-bubble"
+  href="https://wa.me/524772163979"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contáctanos por WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<header>
+  <nav class="navbar" role="navigation" aria-label="Menú principal">
+
+    <a class="navbar__brand" href="#inicio" aria-label="Luz Dental - Inicio">
+      <div class="navbar__brand-text">
+        <span class="navbar__brand-name">Luz Dental</span>
+        <span class="navbar__brand-sub">Consultorio</span>
       </div>
+    </a>
 
-    </nav>
-  </header>
+    <div class="navbar__actions">
+      <button
+        class="navbar__burger"
+        id="burger"
+        aria-controls="navbar-menu"
+        aria-expanded="false"
+        aria-label="Abrir menú"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="navbar__menu" id="navbar-menu" role="list">
+        <a href="#servicios"  role="listitem">Servicios</a>
+        <a href="#galeria"    role="listitem">Galería</a>
+        <a href="blog/"       role="listitem">Blog</a>
+        <a href="#horario"    role="listitem">Horario</a>
+        <a
+          class="btn-gold"
+          href="https://wa.me/524772163979"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="listitem"
+        >WhatsApp</a>
+      </div>
+    </div>
+
+  </nav>
+</header>
 
 
-  <main>
+<main>
 
-    <!-- ========================================================
-         HERO — Primera pantalla
-         ======================================================== -->
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="inicio" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <img src="img/logo.png" alt="Luz Dental" class="hero__logo" />
 
       <p class="hero__eyebrow">Consultorio Dental · León, Guanajuato</p>
-
-      <div style="margin: 0 auto 24px; max-width: 220px;">
-        <img src="img/logo.png" alt="Luz Dental" class="hero__logo" style="max-width:220px;" />
-      </div>
 
       <h1 class="hero__title" id="hero-title">
         Tu sonrisa merece<br />
@@ -98,483 +141,501 @@
           target="_blank"
           rel="noopener noreferrer"
         >Agendar Cita por WhatsApp</a>
-
         <a class="btn-outline" href="tel:4772163979">Llamar Ahora</a>
       </div>
+    </div>
+  </section>
 
-    </section>
 
-
-    <!-- ========================================================
-         MÉTRICAS
-         ======================================================== -->
-    <section class="metrics" aria-label="Estadísticas del consultorio">
-      <div class="container">
-        <div class="metrics__grid">
-
-          <div class="metric-card reveal">
-            <p class="metric-card__number">5.0 ★</p>
-            <p class="metric-card__label">Google Rating</p>
-          </div>
-
-          <div class="metric-card reveal">
-            <p class="metric-card__number">174</p>
-            <p class="metric-card__label">Reseñas verificadas</p>
-          </div>
-
-          <div class="metric-card reveal">
-            <p class="metric-card__number">8+</p>
-            <p class="metric-card__label">Especialidades dentales</p>
-          </div>
-
-          <div class="metric-card reveal">
-            <p class="metric-card__number">100%</p>
-            <p class="metric-card__label">Pacientes satisfechos</p>
-          </div>
-
+  <!-- ============================================================
+       MÉTRICAS
+       ============================================================ -->
+  <section class="metrics" aria-label="Estadísticas del consultorio">
+    <div class="container">
+      <div class="metrics__grid">
+        <div class="metric-card reveal">
+          <p class="metric-card__number">5.0 ★</p>
+          <p class="metric-card__label">Google Rating</p>
+        </div>
+        <div class="metric-card reveal">
+          <p class="metric-card__number">174</p>
+          <p class="metric-card__label">Reseñas verificadas</p>
+        </div>
+        <div class="metric-card reveal">
+          <p class="metric-card__number">8+</p>
+          <p class="metric-card__label">Especialidades dentales</p>
+        </div>
+        <div class="metric-card reveal">
+          <p class="metric-card__number">100%</p>
+          <p class="metric-card__label">Pacientes satisfechos</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 
-    <!-- ========================================================
-         SERVICIOS
-         ======================================================== -->
-    <section class="services" id="servicios" aria-labelledby="services-title">
-      <div class="container">
-
-        <header class="section-header reveal">
-          <span class="section-label">Nuestros Servicios</span>
-          <h2 class="section-title" id="services-title">Tratamientos para cada sonrisa</h2>
-          <div class="gold-divider"></div>
-          <p class="services__desc">
-            Contamos con tecnología avanzada para ofrecerte el mejor cuidado dental.
-          </p>
-        </header>
-
-        <div class="services__grid">
-
-          <article class="service-card reveal">
-            <p class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-teeth"></i></p>
-            <h3 class="service-card__title">Diseño de Sonrisa</h3>
-            <p class="service-card__desc">
-              Transforma tu sonrisa con un diseño personalizado y resultados espectaculares.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <p class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-tooth"></i></p>
-            <h3 class="service-card__title">Implantes Dentales</h3>
-            <p class="service-card__desc">
-              Recupera tu sonrisa completa con implantes de alta calidad y larga durabilidad.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <p class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-crown"></i></p>
-            <h3 class="service-card__title">Corona de Zirconia</h3>
-            <p class="service-card__desc">
-              Coronas estéticas y resistentes con acabado natural y brillo duradero.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <p class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-star-and-crescent"></i></p>
-            <h3 class="service-card__title">Blanqueamiento + Limpieza</h3>
-            <p class="service-card__desc">
-              Dientes más blancos y saludables en una sola sesión profesional.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <p class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-align-center"></i></p>
-            <h3 class="service-card__title">Ortodoncia</h3>
-            <p class="service-card__desc">
-              Alineamos tu sonrisa con brackets modernos para resultados duraderos.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <p class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-syringe"></i></p>
-            <h3 class="service-card__title">Endodoncia</h3>
-            <p class="service-card__desc">
-              Tratamiento de conductos con técnicas actuales para eliminar el dolor.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <p class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-tooth"></i></p>
-            <h3 class="service-card__title">Prótesis Dental</h3>
-            <p class="service-card__desc">
-              Prótesis fijas y removibles adaptadas a tu anatomía y necesidades.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <p class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-scissors"></i></p>
-            <h3 class="service-card__title">Extracción y Cirugía</h3>
-            <p class="service-card__desc">
-              Extracciones simples y cirugía de muelas del juicio con mínimo dolor.
-            </p>
-          </article>
-
-        </div>
-
-        <div class="services__footer">
-          <a
-            class="btn-gold"
-            href="https://wa.me/524772163979"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Consultar disponibilidad por WhatsApp</a>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ========================================================
-         POR QUÉ ELEGIRNOS
-         ======================================================== -->
-    <section class="about" id="nosotros" aria-labelledby="about-title">
-      <div class="container">
-
-        <header class="section-header reveal">
-          <span class="section-label">Por qué elegirnos</span>
-          <h2 class="section-title" id="about-title">Una experiencia diferente</h2>
-          <div class="gold-divider"></div>
-        </header>
-
-        <div class="about__grid">
-
-          <div class="about-item reveal">
-            <div class="about-item__icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
-            <h3 class="about-item__title">Equipo Profesional</h3>
-            <p class="about-item__desc">
-              Especialistas certificados con años de experiencia clínica.
-            </p>
-          </div>
-
-          <div class="about-item reveal">
-            <div class="about-item__icon" aria-hidden="true"><i class="fa-solid fa-microscope"></i></div>
-            <h3 class="about-item__title">Tecnología Avanzada</h3>
-            <p class="about-item__desc">
-              Equipos de última generación para tratamientos más precisos y cómodos.
-            </p>
-          </div>
-
-          <div class="about-item reveal">
-            <div class="about-item__icon" aria-hidden="true"><i class="fa-solid fa-child-reaching"></i></div>
-            <h3 class="about-item__title">Área para Niños</h3>
-            <p class="about-item__desc">
-              Sala de espera con juguetes para que los pequeños se sientan en casa.
-            </p>
-          </div>
-
-          <div class="about-item reveal">
-            <div class="about-item__icon" aria-hidden="true"><i class="fa-solid fa-shield-heart"></i></div>
-            <h3 class="about-item__title">Ambiente de Confianza</h3>
-            <p class="about-item__desc">
-              Te explicamos todo con paciencia para que te sientas tranquilo en todo momento.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ========================================================
-         GALERÍA DE FOTOS
-         ======================================================== -->
-    <section class="gallery" id="galeria" aria-labelledby="gallery-title">
-      <div class="container">
-
-        <header class="section-header reveal">
-          <span class="section-label">Nuestras Instalaciones</span>
-          <h2 class="section-title" id="gallery-title">Conoce el consultorio</h2>
-          <div class="gold-divider"></div>
-        </header>
-
-        <div class="gallery__grid">
-
-          <!-- Foto grande: sillón dental -->
-          <div class="gallery__item gallery__item--large reveal">
-            <img src="img/foto-sillon.jpg" alt="Sillón dental moderno" loading="lazy" />
-            <span class="gallery__caption">Equipo de última generación</span>
-          </div>
-
-          <!-- Foto ancha: recepción -->
-          <div class="gallery__item gallery__item--wide reveal">
-            <img src="img/foto-recepcion.jpg" alt="Recepción del consultorio" loading="lazy" />
-            <span class="gallery__caption">Recepción</span>
-          </div>
-
-          <!-- Fotos pequeñas fila inferior -->
-          <div class="gallery__item gallery__item--medium reveal">
-            <img src="img/foto-sala-espera.jpg" alt="Sala de espera" loading="lazy" />
-            <span class="gallery__caption">Sala de espera con área infantil</span>
-          </div>
-
-          <div class="gallery__item gallery__item--small reveal">
-            <img src="img/foto-equipo.jpg" alt="Equipo dental trabajando" loading="lazy" />
-            <span class="gallery__caption">Nuestro equipo</span>
-          </div>
-
-          <div class="gallery__item gallery__item--small reveal">
-            <img src="img/foto-navidad.jpg" alt="Consultorio en festividades" loading="lazy" />
-            <span class="gallery__caption">Ambiente cálido y festivo</span>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ========================================================
-         TESTIMONIOS
-         ======================================================== -->
-    <section class="testimonials" id="resenas" aria-labelledby="testimonials-title">
-      <div class="container">
-
-        <header class="section-header reveal">
-          <span class="section-label">Lo que dicen nuestros pacientes</span>
-          <h2 class="section-title" id="testimonials-title">Reseñas reales</h2>
-          <div class="gold-divider"></div>
-        </header>
-
-        <div class="testimonials__grid">
-
-          <article class="testimonial-card reveal">
-            <div class="testimonial-card__stars stars" aria-label="5 estrellas">★★★★★</div>
-            <blockquote class="testimonial-card__text">
-              "Excelente consultorio dental. Desde que llegué me atendieron con mucha amabilidad
-              y profesionalismo. Las instalaciones son limpias, modernas y se nota que utilizan
-              muy buena tecnología. El doctor me explicó todo con paciencia y me hizo sentir
-              muy tranquilo durante el tratamiento."
-            </blockquote>
-            <div class="testimonial-card__author">
-              <div class="author-avatar" aria-hidden="true">MV</div>
-              <div>
-                <p class="author-name">Marcos Valdés</p>
-                <p class="author-source">Google Review</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="testimonial-card reveal">
-            <div class="testimonial-card__stars stars" aria-label="5 estrellas">★★★★★</div>
-            <blockquote class="testimonial-card__text">
-              "Recomiendo mucho el consultorio, ya que tienen un trato muy amable,
-              resuelven cualquier duda que tengas, las instalaciones están muy limpias
-              y el personal es muy agradable."
-            </blockquote>
-            <div class="testimonial-card__author">
-              <div class="author-avatar" aria-hidden="true">LS</div>
-              <div>
-                <p class="author-name">Lizett Santillán</p>
-                <p class="author-source">Google Review</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="testimonial-card reveal">
-            <div class="testimonial-card__stars stars" aria-label="5 estrellas">★★★★★</div>
-            <blockquote class="testimonial-card__text">
-              "Excelente atención. Todo el personal es muy amable y profesional.
-              Me sentí en confianza en todo momento, la doctora me explicó y aclaró
-              todas mis dudas. ¡Muy recomendable!"
-            </blockquote>
-            <div class="testimonial-card__author">
-              <div class="author-avatar" aria-hidden="true">IG</div>
-              <div>
-                <p class="author-name">Itzel Galindo</p>
-                <p class="author-source">Google Review</p>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ========================================================
-         HORARIO Y CONTACTO
-         ======================================================== -->
-    <section class="schedule" id="horario" aria-labelledby="schedule-title">
-      <div class="container">
-
-        <header class="section-header reveal">
-          <span class="section-label">Horario y ubicación</span>
-          <h2 class="section-title" id="schedule-title">Estamos aquí para ti</h2>
-          <div class="gold-divider"></div>
-        </header>
-
-        <div class="schedule__wrap">
-
-          <!--
-            data-day: 0=Dom 1=Lun 2=Mar 3=Mié 4=Jue 5=Vie 6=Sáb
-            El JS lee este atributo para resaltar el día actual.
-          -->
-          <table class="schedule__table reveal" id="schedule-table" aria-label="Horario de atención">
-            <tbody>
-              <tr data-day="1">
-                <td class="day">Lunes</td>
-                <td class="hours">9:30 a.m. – 7:00 p.m.</td>
-              </tr>
-              <tr data-day="2">
-                <td class="day">Martes</td>
-                <td class="hours">9:30 a.m. – 7:00 p.m.</td>
-              </tr>
-              <tr data-day="3">
-                <td class="day">Miércoles</td>
-                <td class="hours">9:30 a.m. – 8:00 p.m.</td>
-              </tr>
-              <tr data-day="4">
-                <td class="day">Jueves</td>
-                <td class="hours">9:30 a.m. – 8:00 p.m.</td>
-              </tr>
-              <tr data-day="5">
-                <td class="day">Viernes</td>
-                <td class="hours">9:30 a.m. – 7:00 p.m.</td>
-              </tr>
-              <tr data-day="6">
-                <td class="day">Sábado</td>
-                <td class="hours">9:30 a.m. – 6:00 p.m.</td>
-              </tr>
-              <tr data-day="0">
-                <td class="day">Domingo</td>
-                <td class="hours closed">Cerrado</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="schedule__contact reveal">
-            <address class="schedule__address">
-              <i class="fa-solid fa-location-dot"></i> Camino a Ibarrilla #920, Jardines del Bosque<br />
-              37200 León de los Aldama, Guanajuato<br /><br />
-              <i class="fa-solid fa-phone"></i> <a href="tel:4772163979">477 216 3979</a><br />
-              <i class="fa-solid fa-envelope"></i> <a href="mailto:luzdentalconsultorio@gmail.com">luzdentalconsultorio@gmail.com</a>
-            </address>
-            <a
-              class="btn-outline"
-              href="https://maps.google.com/?q=Camino+A+Ibarrilla+920+Leon+Guanajuato"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Ver en Google Maps</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ========================================================
-         CTA FINAL
-         ======================================================== -->
-    <section class="cta" aria-labelledby="cta-title">
-      <div class="container">
-
-        <h2 class="cta__title" id="cta-title">¿Listo para transformar tu sonrisa?</h2>
-        <p class="cta__desc">
-          Agenda tu consulta hoy mismo. Respuesta rápida por WhatsApp.
-        </p>
-
-        <div class="cta__buttons">
-          <a
-            class="btn-gold"
-            href="https://wa.me/524772163979"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Agendar por WhatsApp</a>
-
-          <a class="btn-outline" href="tel:4772163979"><i class="fa-solid fa-phone"></i> 477 216 3979</a>
-        </div>
-
-        <p class="cta__note">Sin compromiso · Respuesta en minutos</p>
-
-      </div>
-    </section>
-
-  </main>
-
-
-  <!-- ========================================================
-       FOOTER
-       ======================================================== -->
-  <footer class="footer" role="contentinfo">
+  <!-- ============================================================
+       SERVICIOS — tarjetas con imagen de fondo
+       ============================================================ -->
+  <section class="services" id="servicios" aria-labelledby="services-title">
     <div class="container">
 
-      <div class="footer__grid">
+      <header class="section-header reveal">
+        <span class="section-label">Nuestros Servicios</span>
+        <h2 class="section-title" id="services-title">Tratamientos para cada sonrisa</h2>
+        <div class="gold-divider"></div>
+        <p class="services__desc">
+          Contamos con tecnología avanzada para ofrecerte el mejor cuidado dental.
+        </p>
+      </header>
 
-        <!-- Marca -->
-        <div class="footer__col">
-          <p class="footer__brand-name">Luz Dental</p>
-          <p class="footer__brand-sub">Consultorio</p>
-          <p class="footer__brand-desc">
-            Tu sonrisa es nuestra prioridad. Atención personalizada
-            con tecnología avanzada en León, Guanajuato.
-          </p>
-        </div>
+      <div class="services__grid">
 
-        <!-- Contacto -->
-        <div class="footer__col">
-          <p class="footer__col-title">Contacto</p>
-          <address>
-            Camino a Ibarrilla #920<br />
-            Jardines del Bosque, León, Gto.<br />
-            <a href="tel:4772163979">477 216 3979</a>
-            <a href="mailto:luzdentalconsultorio@gmail.com">luzdentalconsultorio@gmail.com</a>
-          </address>
-        </div>
+        <article class="service-card reveal">
+          <img class="service-card__img" src="img/srv-diseno-sonrisa.jpg" alt="Diseño de Sonrisa" loading="lazy" />
+          <div class="service-card__overlay"></div>
+          <div class="service-card__body">
+            <i class="fa-solid fa-teeth service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Diseño de Sonrisa</h3>
+            <p class="service-card__desc">Transforma tu sonrisa con un diseño personalizado y resultados espectaculares.</p>
+          </div>
+        </article>
 
-        <!-- Horario resumido -->
-        <div class="footer__col">
-          <p class="footer__col-title">Horario</p>
-          <p>
-            Lun–Mar–Vie: 9:30 – 7:00 p.m.<br />
-            Mié–Jue: 9:30 – 8:00 p.m.<br />
-            Sábado: 9:30 – 6:00 p.m.<br />
-            Domingo: Cerrado
-          </p>
-        </div>
+        <article class="service-card reveal">
+          <img class="service-card__img" src="img/srv-implantes.jpg" alt="Implantes Dentales" loading="lazy" />
+          <div class="service-card__overlay"></div>
+          <div class="service-card__body">
+            <i class="fa-solid fa-tooth service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Implantes Dentales</h3>
+            <p class="service-card__desc">Recupera tu sonrisa completa con implantes de alta calidad y larga durabilidad.</p>
+          </div>
+        </article>
 
-        <!-- Redes sociales -->
-        <div class="footer__col">
-          <p class="footer__col-title">Redes sociales</p>
-          <a
-            href="https://www.facebook.com/profile.php?id=61568754971209&mibextid=LQQJ4d"
-            target="_blank"
-            rel="noopener noreferrer"
-          ><i class="fa-brands fa-facebook"></i> Facebook</a>
-          <a
-            href="https://www.instagram.com/luzdentalconsultorio"
-            target="_blank"
-            rel="noopener noreferrer"
-          ><i class="fa-brands fa-instagram"></i> Instagram</a>
-          <a
-            href="https://www.tiktok.com/@luzdentalconsultorio"
-            target="_blank"
-            rel="noopener noreferrer"
-          ><i class="fa-brands fa-tiktok"></i> TikTok</a>
-        </div>
+        <article class="service-card reveal">
+          <img class="service-card__img" src="img/srv-corona-zirconia.jpg" alt="Corona de Zirconia" loading="lazy" />
+          <div class="service-card__overlay"></div>
+          <div class="service-card__body">
+            <i class="fa-solid fa-crown service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Corona de Zirconia</h3>
+            <p class="service-card__desc">Coronas estéticas y resistentes con acabado natural y brillo duradero.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <img class="service-card__img" src="img/srv-blanqueamiento.jpg" alt="Blanqueamiento" loading="lazy" />
+          <div class="service-card__overlay"></div>
+          <div class="service-card__body">
+            <i class="fa-solid fa-sun service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Blanqueamiento + Limpieza</h3>
+            <p class="service-card__desc">Dientes más blancos y saludables en una sola sesión profesional.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <img class="service-card__img" src="img/srv-ortodoncia.jpg" alt="Ortodoncia" loading="lazy" />
+          <div class="service-card__overlay"></div>
+          <div class="service-card__body">
+            <i class="fa-solid fa-sliders service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Ortodoncia</h3>
+            <p class="service-card__desc">Alineamos tu sonrisa con brackets modernos para resultados duraderos.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <img class="service-card__img" src="img/srv-endodoncia.jpg" alt="Endodoncia" loading="lazy" />
+          <div class="service-card__overlay"></div>
+          <div class="service-card__body">
+            <i class="fa-solid fa-syringe service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Endodoncia</h3>
+            <p class="service-card__desc">Tratamiento de conductos con técnicas actuales para eliminar el dolor.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <img class="service-card__img" src="img/srv-protesis.jpg" alt="Prótesis Dental" loading="lazy" />
+          <div class="service-card__overlay"></div>
+          <div class="service-card__body">
+            <i class="fa-solid fa-teeth-open service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Prótesis Dental</h3>
+            <p class="service-card__desc">Prótesis fijas y removibles adaptadas a tu anatomía y necesidades.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <img class="service-card__img" src="img/srv-cirugia-juicio.jpg" alt="Cirugía Muelas del Juicio" loading="lazy" />
+          <div class="service-card__overlay"></div>
+          <div class="service-card__body">
+            <i class="fa-solid fa-scissors service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Extracción y Cirugía</h3>
+            <p class="service-card__desc">Extracciones simples y cirugía de muelas del juicio con mínimo dolor.</p>
+          </div>
+        </article>
 
       </div>
 
-      <div class="footer__bottom">
-        <p>© 2025 Luz Dental Consultorio · León, Guanajuato</p>
+      <div class="services__footer">
+        <a
+          class="btn-gold"
+          href="https://wa.me/524772163979"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Consultar disponibilidad por WhatsApp</a>
       </div>
 
     </div>
-  </footer>
+  </section>
 
 
-  <!-- Script al final para no bloquear el render -->
-  <script src="js/main.js"></script>
+  <!-- ============================================================
+       POR QUÉ ELEGIRNOS
+       ============================================================ -->
+  <section class="about" id="nosotros" aria-labelledby="about-title">
+    <div class="container">
 
+      <header class="section-header reveal">
+        <span class="section-label">Por qué elegirnos</span>
+        <h2 class="section-title" id="about-title">Una experiencia diferente</h2>
+        <div class="gold-divider"></div>
+      </header>
+
+      <div class="about__grid">
+        <div class="about-item reveal">
+          <div class="about-item__icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
+          <h3 class="about-item__title">Equipo Profesional</h3>
+          <p class="about-item__desc">Especialistas certificados con años de experiencia clínica.</p>
+        </div>
+        <div class="about-item reveal">
+          <div class="about-item__icon" aria-hidden="true"><i class="fa-solid fa-microscope"></i></div>
+          <h3 class="about-item__title">Tecnología Avanzada</h3>
+          <p class="about-item__desc">Equipos de última generación para tratamientos más precisos y cómodos.</p>
+        </div>
+        <div class="about-item reveal">
+          <div class="about-item__icon" aria-hidden="true"><i class="fa-solid fa-child-reaching"></i></div>
+          <h3 class="about-item__title">Área para Niños</h3>
+          <p class="about-item__desc">Sala de espera con juguetes para que los pequeños se sientan en casa.</p>
+        </div>
+        <div class="about-item reveal">
+          <div class="about-item__icon" aria-hidden="true"><i class="fa-solid fa-shield-heart"></i></div>
+          <h3 class="about-item__title">Ambiente de Confianza</h3>
+          <p class="about-item__desc">Te explicamos todo con paciencia para que te sientas tranquilo en todo momento.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       GALERÍA
+       ============================================================ -->
+  <section class="gallery" id="galeria" aria-labelledby="gallery-title">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <span class="section-label">Nuestras Instalaciones</span>
+        <h2 class="section-title" id="gallery-title">Conoce el consultorio</h2>
+        <div class="gold-divider"></div>
+      </header>
+
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--large reveal">
+          <img src="img/foto-sillon.jpg" alt="Sillón dental moderno" loading="lazy" />
+          <span class="gallery__caption">Equipo de última generación</span>
+        </div>
+        <div class="gallery__item gallery__item--wide reveal">
+          <img src="img/foto-recepcion.jpg" alt="Recepción del consultorio" loading="lazy" />
+          <span class="gallery__caption">Recepción</span>
+        </div>
+        <div class="gallery__item gallery__item--medium reveal">
+          <img src="img/foto-sala-espera.jpg" alt="Sala de espera" loading="lazy" />
+          <span class="gallery__caption">Sala de espera con área infantil</span>
+        </div>
+        <div class="gallery__item gallery__item--small reveal">
+          <img src="img/foto-equipo.jpg" alt="Equipo dental" loading="lazy" />
+          <span class="gallery__caption">Nuestro equipo</span>
+        </div>
+        <div class="gallery__item gallery__item--small reveal">
+          <img src="img/foto-navidad.jpg" alt="Ambiente del consultorio" loading="lazy" />
+          <span class="gallery__caption">Ambiente cálido</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TESTIMONIOS
+       ============================================================ -->
+  <section class="testimonials" id="resenas" aria-labelledby="testimonials-title">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <span class="section-label">Lo que dicen nuestros pacientes</span>
+        <h2 class="section-title" id="testimonials-title">Reseñas reales</h2>
+        <div class="gold-divider"></div>
+      </header>
+
+      <div class="testimonials__grid">
+
+        <article class="testimonial-card reveal">
+          <div class="testimonial-card__stars stars" aria-label="5 estrellas">★★★★★</div>
+          <blockquote class="testimonial-card__text">
+            "Excelente consultorio dental. Desde que llegué me atendieron con mucha amabilidad
+            y profesionalismo. Las instalaciones son limpias, modernas y se nota que utilizan
+            muy buena tecnología."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="author-avatar" aria-hidden="true">MV</div>
+            <div>
+              <p class="author-name">Marcos Valdés</p>
+              <p class="author-source">Google Review</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal">
+          <div class="testimonial-card__stars stars" aria-label="5 estrellas">★★★★★</div>
+          <blockquote class="testimonial-card__text">
+            "Recomiendo mucho el consultorio, ya que tienen un trato muy amable,
+            resuelven cualquier duda que tengas, las instalaciones están muy limpias
+            y el personal es muy agradable."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="author-avatar" aria-hidden="true">LS</div>
+            <div>
+              <p class="author-name">Lizett Santillán</p>
+              <p class="author-source">Google Review</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal">
+          <div class="testimonial-card__stars stars" aria-label="5 estrellas">★★★★★</div>
+          <blockquote class="testimonial-card__text">
+            "Excelente atención. Todo el personal es muy amable y profesional.
+            Me sentí en confianza en todo momento, la doctora me explicó y aclaró
+            todas mis dudas. ¡Muy recomendable!"
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="author-avatar" aria-hidden="true">IG</div>
+            <div>
+              <p class="author-name">Itzel Galindo</p>
+              <p class="author-source">Google Review</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOG PREVIEW
+       ============================================================ -->
+  <section class="blog-preview" id="blog-preview" aria-labelledby="blog-preview-title">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <span class="section-label">Consejos y noticias</span>
+        <h2 class="section-title" id="blog-preview-title">Del consultorio para ti</h2>
+        <div class="gold-divider"></div>
+      </header>
+
+      <div class="blog-preview__grid">
+
+        <a href="blog/" class="blog-card reveal">
+          <div class="blog-card__thumb blog-thumb--extraccion">
+            <span class="blog-thumb__read-time"><i class="fa-regular fa-clock"></i> 3 min</span>
+            <span class="blog-thumb__category">Cuidados</span>
+            <h3 class="blog-thumb__title">Cuidados después de una extracción o cirugía dental</h3>
+          </div>
+          <div class="blog-card__body">
+            <p class="blog-card__excerpt">Lo que debes y no debes hacer en las primeras 24 horas para una recuperación rápida.</p>
+            <span class="blog-card__read">Leer más <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="blog/" class="blog-card reveal">
+          <div class="blog-card__thumb blog-thumb--brackets">
+            <span class="blog-thumb__read-time"><i class="fa-regular fa-clock"></i> 4 min</span>
+            <span class="blog-thumb__category">Ortodoncia</span>
+            <h3 class="blog-thumb__title">Tips para el cuidado de tus brackets día a día</h3>
+          </div>
+          <div class="blog-card__body">
+            <p class="blog-card__excerpt">Alimentos que debes evitar, cómo limpiar correctamente y cuándo visitar al dentista.</p>
+            <span class="blog-card__read">Leer más <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="blog/" class="blog-card reveal">
+          <div class="blog-card__thumb blog-thumb--aniversario">
+            <span class="blog-thumb__read-time"><i class="fa-regular fa-clock"></i> 2 min</span>
+            <span class="blog-thumb__category">Noticias</span>
+            <h3 class="blog-thumb__title">¡Celebramos nuestro aniversario con descuentos especiales!</h3>
+          </div>
+          <div class="blog-card__body">
+            <p class="blog-card__excerpt">Gracias a todos nuestros pacientes por acompañarnos en este camino.</p>
+            <span class="blog-card__read">Leer más <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="blog-preview__footer">
+        <a class="btn-outline" href="blog/">Ver Blog &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       HORARIO Y MAPA
+       ============================================================ -->
+  <section class="schedule" id="horario" aria-labelledby="schedule-title">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <span class="section-label">Horario y ubicación</span>
+        <h2 class="section-title" id="schedule-title">Estamos aquí para ti</h2>
+        <div class="gold-divider"></div>
+      </header>
+
+      <div class="schedule__wrap">
+
+        <table class="schedule__table reveal" id="schedule-table" aria-label="Horario de atención">
+          <tbody>
+            <tr data-day="1"><td class="day">Lunes</td>    <td class="hours">9:30 a.m. – 7:00 p.m.</td></tr>
+            <tr data-day="2"><td class="day">Martes</td>   <td class="hours">9:30 a.m. – 7:00 p.m.</td></tr>
+            <tr data-day="3"><td class="day">Miércoles</td><td class="hours">9:30 a.m. – 8:00 p.m.</td></tr>
+            <tr data-day="4"><td class="day">Jueves</td>   <td class="hours">9:30 a.m. – 8:00 p.m.</td></tr>
+            <tr data-day="5"><td class="day">Viernes</td>  <td class="hours">9:30 a.m. – 7:00 p.m.</td></tr>
+            <tr data-day="6"><td class="day">Sábado</td>   <td class="hours">9:30 a.m. – 6:00 p.m.</td></tr>
+            <tr data-day="0"><td class="day">Domingo</td>  <td class="hours closed">Cerrado</td></tr>
+          </tbody>
+        </table>
+
+        <!-- MAPA INTEGRADO -->
+        <div class="schedule__map reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.9!2d-101.6!3d21.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x124bb0a5dd17e33f!2sLuz%20Dental%20Consultorio!5e0!3m2!1ses!2smx!4v1"
+            title="Ubicación de Luz Dental Consultorio en Google Maps"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <!--
+          NOTA: Si el mapa no carga bien, ve a Google Maps, busca
+          "Luz Dental Consultorio León", haz clic en Compartir > Insertar
+          y reemplaza el atributo src del iframe de arriba con el que
+          te da Google.
+        -->
+
+        <div class="schedule__contact reveal">
+          <address class="schedule__address">
+            <i class="fa-solid fa-location-dot"></i>
+            Camino a Ibarrilla #920, Jardines del Bosque<br />
+            37200 León de los Aldama, Guanajuato<br /><br />
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:4772163979">477 216 3979</a><br />
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:luzdentalconsultorio@gmail.com">luzdentalconsultorio@gmail.com</a>
+          </address>
+          <a
+            class="btn-outline"
+            href="https://www.google.com/maps/place/Luz+Dental+Consultorio/data=!4m2!3m1!1s0x0:0x124bb0a5dd17e33f?sa=X&ved=1t:2428&hl=es-419&ictx=111"
+            target="_blank"
+            rel="noopener noreferrer"
+          ><i class="fa-solid fa-map-location-dot"></i> Ver en Google Maps</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA FINAL
+       ============================================================ -->
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="container">
+      <h2 class="cta__title" id="cta-title">¿Listo para transformar tu sonrisa?</h2>
+      <p class="cta__desc">Agenda tu consulta hoy mismo. Respuesta rápida por WhatsApp.</p>
+      <div class="cta__buttons">
+        <a class="btn-gold" href="https://wa.me/524772163979" target="_blank" rel="noopener noreferrer">
+          Agendar por WhatsApp
+        </a>
+        <a class="btn-outline" href="tel:4772163979">
+          <i class="fa-solid fa-phone"></i> 477 216 3979
+        </a>
+      </div>
+      <p class="cta__note">Sin compromiso · Respuesta en minutos</p>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+
+    <div class="footer__grid">
+
+      <div class="footer__col">
+        <p class="footer__brand-name">Luz Dental</p>
+        <p class="footer__brand-sub">Consultorio</p>
+        <p class="footer__brand-desc">Tu sonrisa es nuestra prioridad. Atención personalizada con tecnología avanzada en León, Guanajuato.</p>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">Contacto</p>
+        <address>
+          Camino a Ibarrilla #920<br />
+          Jardines del Bosque, León, Gto.<br />
+          <a href="tel:4772163979">477 216 3979</a>
+          <a href="mailto:luzdentalconsultorio@gmail.com">luzdentalconsultorio@gmail.com</a>
+        </address>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">Horario</p>
+        <p>
+          Lun–Mar–Vie: 9:30 – 7:00 p.m.<br />
+          Mié–Jue: 9:30 – 8:00 p.m.<br />
+          Sábado: 9:30 – 6:00 p.m.<br />
+          Domingo: Cerrado
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">Redes sociales</p>
+        <a href="https://www.facebook.com/profile.php?id=61568754971209&mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-facebook"></i> Facebook
+        </a>
+        <a href="https://www.instagram.com/luzdentalconsultorio" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+        <a href="https://www.tiktok.com/@luzdentalconsultorio" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-tiktok"></i> TikTok
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 Luz Dental Consultorio · León, Guanajuato</span>
+      <a href="blog/">Blog</a>
+    </div>
+
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -1,12 +1,11 @@
 /* ============================================================
-   main.js — Burger menu, scroll reveal, día de hoy en horario
+   main.js — Burger menu, scroll reveal, horario, popup, WA
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ----------------------------------------------------------
      1. BURGER MENU
-     Abre/cierra el menú en móvil
      ---------------------------------------------------------- */
   const burger = document.getElementById('burger');
   const menu   = document.getElementById('navbar-menu');
@@ -17,8 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       burger.classList.toggle('open', isOpen);
       burger.setAttribute('aria-expanded', isOpen);
     });
-
-    // Cierra el menú al hacer clic en un enlace interno
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menu.classList.remove('open');
@@ -28,13 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
   /* ----------------------------------------------------------
      2. SCROLL REVEAL
-     Anima elementos con class="reveal" al entrar en pantalla
      ---------------------------------------------------------- */
   const reveals = document.querySelectorAll('.reveal');
-
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -45,24 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.10 }
     );
     reveals.forEach(el => observer.observe(el));
   } else {
-    // Fallback: muestra todo de inmediato si no hay soporte
     reveals.forEach(el => el.classList.add('visible'));
   }
 
-
   /* ----------------------------------------------------------
-     3. DÍA DE HOY EN EL HORARIO
-     Resalta la fila del día actual en la tabla de horarios
+     3. DÍA DE HOY EN HORARIO
+     0=Dom 1=Lun 2=Mar 3=Mié 4=Jue 5=Vie 6=Sáb
      ---------------------------------------------------------- */
-  // 0=Dom 1=Lun 2=Mar 3=Mié 4=Jue 5=Vie 6=Sáb
   const today = new Date().getDay();
-
-  const rows = document.querySelectorAll('#schedule-table tr[data-day]');
-  rows.forEach(row => {
+  document.querySelectorAll('#schedule-table tr[data-day]').forEach(row => {
     if (parseInt(row.dataset.day) === today) {
       row.querySelectorAll('td').forEach(td => {
         if (td.classList.contains('day'))   td.classList.add('today');
@@ -70,5 +59,39 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  /* ----------------------------------------------------------
+     4. POPUP DE PROMOCIONES
+     Se muestra una vez por sesión. Para mostrarlo siempre
+     en desarrollo, comenta la línea de sessionStorage.
+     ---------------------------------------------------------- */
+  const overlay  = document.getElementById('promo-popup');
+  const closeBtn = document.getElementById('popup-close');
+
+  if (overlay && closeBtn) {
+    const seen = sessionStorage.getItem('popupSeen');
+    if (!seen) {
+      setTimeout(() => {
+        overlay.classList.remove('hidden');
+      }, 900); // pequeño delay para que la página cargue primero
+    }
+
+    const closePopup = () => {
+      overlay.classList.add('hidden');
+      sessionStorage.setItem('popupSeen', '1');
+    };
+
+    closeBtn.addEventListener('click', closePopup);
+
+    // También cerrar al hacer clic en el fondo
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closePopup();
+    });
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePopup();
+    });
+  }
 
 });

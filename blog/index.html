@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog de Luz Dental — Tips de salud bucal, cuidados post-tratamiento, ortodoncia y más." />
+  <title>Blog | Luz Dental Consultorio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/sections.css" />
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     MODAL DE ARTÍCULO COMPLETO
+     ============================================================ -->
+<div class="article-modal hidden" id="article-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="article-modal__backdrop" id="modal-backdrop"></div>
+  <div class="article-modal__box">
+    <button class="article-modal__close" id="modal-close" aria-label="Cerrar artículo">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="article-modal__thumb" id="modal-thumb"></div>
+    <div class="article-modal__body">
+      <span class="article-modal__tag" id="modal-tag"></span>
+      <h2 class="article-modal__title" id="modal-title"></h2>
+      <p class="article-modal__date" id="modal-date"></p>
+      <div class="article-modal__content" id="modal-content"></div>
+      <div class="article-modal__cta">
+        <a class="btn-gold" href="https://wa.me/524772163979" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> Agendar cita
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Burbuja WhatsApp -->
+<a class="whatsapp-bubble" href="https://wa.me/524772163979" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" role="navigation" aria-label="Menú principal">
+    <a class="navbar__brand" href="../index.html" aria-label="Luz Dental - Inicio">
+      <div class="navbar__brand-text">
+        <span class="navbar__brand-name">Luz Dental</span>
+        <span class="navbar__brand-sub">Consultorio</span>
+      </div>
+    </a>
+    <div class="navbar__actions">
+      <button class="navbar__burger" id="burger" aria-controls="navbar-menu" aria-expanded="false" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navbar__menu" id="navbar-menu" role="list">
+        <a href="../index.html#servicios" role="listitem">Servicios</a>
+        <a href="../index.html#galeria"   role="listitem">Galería</a>
+        <a href="."                       role="listitem" aria-current="page">Blog</a>
+        <a href="../index.html#horario"   role="listitem">Horario</a>
+        <a class="btn-gold" href="https://wa.me/524772163979" target="_blank" rel="noopener noreferrer" role="listitem">WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Hero del blog -->
+  <section class="blog-hero">
+    <div class="container">
+      <span class="section-label">Del consultorio para ti</span>
+      <h1 class="blog-hero__title">Blog de Salud Dental</h1>
+      <p class="blog-hero__desc">Tips, cuidados, noticias y todo lo que necesitas saber para mantener tu sonrisa sana y brillante.</p>
+      <div class="blog-filters" role="list" aria-label="Filtrar por categoría">
+        <button class="filter-btn active" data-filter="all"       role="listitem">Todos</button>
+        <button class="filter-btn"        data-filter="cuidados"  role="listitem">Cuidados</button>
+        <button class="filter-btn"        data-filter="ortodoncia" role="listitem">Ortodoncia</button>
+        <button class="filter-btn"        data-filter="noticias"  role="listitem">Noticias</button>
+        <button class="filter-btn"        data-filter="higiene"   role="listitem">Higiene</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid de artículos -->
+  <section class="blog-main" aria-label="Artículos del blog">
+    <div class="container">
+      <div class="blog-grid" id="blog-grid">
+
+        <!-- =====================================================
+             ARTÍCULO 1 — Extracción dental
+             ===================================================== -->
+        <article class="blog-post-card reveal" data-category="cuidados"
+          data-title="Cuidados después de una extracción dental"
+          data-tag="Cuidados"
+          data-date="Enero 2026"
+          data-thumb="extraccion"
+          data-content="
+            <h3>Las primeras 24 horas son clave</h3>
+            <p>Después de una extracción dental, tu cuerpo forma un coágulo en el alvéolo (el hueco que deja el diente). Ese coágulo es esencial para una buena cicatrización — protegerlo es tu prioridad.</p>
+
+            <h3>✅ Lo que SÍ debes hacer</h3>
+            <ul>
+              <li>Muerde la gasa que te dio el dentista durante <strong>30–45 minutos</strong> con presión constante.</li>
+              <li>Aplica hielo envuelto en tela en la mejilla: <strong>15 min sí, 15 min no</strong>, durante las primeras 2 horas.</li>
+              <li>Come alimentos suaves y fríos: yogur, helado, puré, gelatina.</li>
+              <li>Toma los medicamentos indicados aunque no sientas dolor todavía.</li>
+              <li>Descansa el día de la extracción — evita actividad física intensa.</li>
+            </ul>
+
+            <h3>❌ Lo que NO debes hacer</h3>
+            <ul>
+              <li><strong>No uses popote</strong> — la succión puede desprender el coágulo.</li>
+              <li>No enjuagues fuerte ni escupas con fuerza las primeras 24 h.</li>
+              <li>No fumes — el tabaco interfiere con la cicatrización y puede causar alveolitis.</li>
+              <li>No comas alimentos calientes, duros o picantes el primer día.</li>
+              <li>No toques la herida con la lengua ni con los dedos.</li>
+            </ul>
+
+            <h3>⚠️ Señales de alarma</h3>
+            <p>Regresa al consultorio si presentas: dolor intenso que aumenta después del 3.er día, sangrado que no cede, fiebre, mal sabor persistente o hinchazón que empeora. Puede ser una <em>alveolitis</em> — tratable fácilmente si se atiende a tiempo.</p>
+
+            <h3>¿Cuándo sana por completo?</h3>
+            <p>La encía cierra visualmente en <strong>1–2 semanas</strong>. El hueso se regenera completamente en <strong>3–6 meses</strong>. Durante ese tiempo es ideal planear la colocación de un implante si es necesario.</p>
+          "
+        >
+          <div class="blog-post-card__thumb blog-thumb--extraccion">
+            <span class="blog-thumb__read-time"><i class="fa-regular fa-clock"></i> 3 min de lectura</span>
+          <span class="blog-thumb__category">Cuidados</span>
+          <h2 class="blog-thumb__title">Cuidados después de una extracción dental</h2>
+        </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__tag">Cuidados</span>
+            <h2 class="blog-post-card__title">Cuidados después de una extracción dental</h2>
+            <p class="blog-post-card__excerpt">Lo que debes y no debes hacer en las primeras 24 horas para una recuperación rápida y sin complicaciones.</p>
+            <div class="blog-post-card__footer">
+              <span class="blog-post-card__date"><i class="fa-regular fa-calendar"></i> Enero 2026</span>
+              <button class="blog-read-btn">Leer más <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             ARTÍCULO 2 — Brackets
+             ===================================================== -->
+        <article class="blog-post-card reveal" data-category="ortodoncia"
+          data-title="Tips para el cuidado de tus brackets"
+          data-tag="Ortodoncia"
+          data-date="Febrero 2026"
+          data-thumb="brackets"
+          data-content="
+            <h3>Tu ortodoncia avanza bien si cuidas tus brackets</h3>
+            <p>Los brackets trabajan 24 horas al día moviéndote los dientes. Pero para que ese movimiento sea eficaz — y termine a tiempo — necesitan que los cuides correctamente.</p>
+
+            <h3>🍎 Alimentos que debes evitar</h3>
+            <ul>
+              <li><strong>Duros:</strong> manzana entera, zanahoria cruda, nueces, hielo, palomitas.</li>
+              <li><strong>Pegajosos:</strong> chicle, caramelo masticable, toffee, dulce de leche.</li>
+              <li><strong>Muy crujientes:</strong> tostadas, nachos, galletas duras.</li>
+            </ul>
+            <p>La regla sencilla: si tienes que morder con fuerza o masticar mucho, córtalo en trozos pequeños o evítalo.</p>
+
+            <h3>🪥 Cómo limpiar correctamente</h3>
+            <ul>
+              <li>Cepilla <strong>después de cada comida</strong> — no solo en las mañanas y noches.</li>
+              <li>Usa cepillo de ortodoncia con cabezal en V o cepillo unipenacho para los espacios entre bracket y encía.</li>
+              <li>El hilo dental con pasahilo o el irrigador oral (tipo Waterpik) son esenciales — el hilo normal no llega bien.</li>
+              <li>Enjuague con flúor antes de dormir.</li>
+            </ul>
+
+            <h3>🚨 Cuándo llamar al consultorio</h3>
+            <ul>
+              <li>Se te despegó un bracket o se cortó un arco.</li>
+              <li>El arco está rozando la mejilla o la lengua (pueden ponerte cera dental mientras).</li>
+              <li>Sientes un dolor que no cede después de 3–4 días de ajuste.</li>
+              <li>Un diente se mueve más rápido o en dirección extraña.</li>
+            </ul>
+
+            <h3>📅 Frecuencia de citas</h3>
+            <p>Las citas de ajuste son cada <strong>4–6 semanas</strong> generalmente. No las pospongas — cada cita perdida puede alargar tu tratamiento.</p>
+          "
+        >
+          <div class="blog-post-card__thumb blog-thumb--brackets">
+            <span class="blog-thumb__read-time"><i class="fa-regular fa-clock"></i> 4 min de lectura</span>
+          <span class="blog-thumb__category">Ortodoncia</span>
+          <h2 class="blog-thumb__title">Tips para el cuidado de tus brackets</h2>
+        </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__tag">Ortodoncia</span>
+            <h2 class="blog-post-card__title">Tips para el cuidado de tus brackets</h2>
+            <p class="blog-post-card__excerpt">Alimentos que debes evitar, cómo limpiar correctamente y cuándo es urgente visitar al dentista.</p>
+            <div class="blog-post-card__footer">
+              <span class="blog-post-card__date"><i class="fa-regular fa-calendar"></i> Febrero 2026</span>
+              <button class="blog-read-btn">Leer más <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             ARTÍCULO 3 — Guardas
+             ===================================================== -->
+        <article class="blog-post-card reveal" data-category="ortodoncia"
+          data-title="Cómo cuidar tus guardas al terminar ortodoncia"
+          data-tag="Ortodoncia"
+          data-date="Marzo 2026"
+          data-thumb="guardas"
+          data-content="
+            <h3>¿Por qué la guarda es tan importante?</h3>
+            <p>Al terminar tu ortodoncia, los dientes todavía <em>quieren</em> regresar a su posición original. La guarda de retención es lo que evita ese movimiento. Sin ella, parte del tratamiento puede perderse en meses.</p>
+
+            <h3>¿Cuánto tiempo debo usarla?</h3>
+            <ul>
+              <li><strong>Primeros 6 meses:</strong> úsala todo el día y toda la noche. Solo quítala para comer y cepillarte.</li>
+              <li><strong>Meses 6–12:</strong> solo por las noches.</li>
+              <li><strong>De ahí en adelante:</strong> muchos dentistas recomiendan usarla de noche indefinidamente.</li>
+            </ul>
+
+            <h3>🧼 Cómo limpiarla correctamente</h3>
+            <ul>
+              <li>Enjuágala con agua fría cada vez que te la quites.</li>
+              <li>Cepíllala con cepillo suave y jabón neutro (no pasta dental — raspa el acrílico).</li>
+              <li>Una vez a la semana, déjala en remojo 10 minutos con pastilla limpiadora para retenedores.</li>
+              <li>Guárdala siempre en su estuche — nunca envuelta en servilleta.</li>
+            </ul>
+
+            <h3>⚠️ Señales de que necesita revisión</h3>
+            <ul>
+              <li>Sientes que aprieta diferente o ya no entra bien — puede indicar movimiento dental.</li>
+              <li>Tiene grietas, está deformada o huele mal a pesar de limpiarla.</li>
+              <li>Te causa dolor o llagas.</li>
+            </ul>
+
+            <h3>¿Cada cuánto se cambia?</h3>
+            <p>Una guarda bien cuidada dura entre <strong>2 y 5 años</strong>. Si la usas correctamente y la limpias bien, no debería dañarse pronto. Trae tu guarda a cada revisión para que el dentista la evalúe.</p>
+          "
+        >
+          <div class="blog-post-card__thumb blog-thumb--guardas">
+            <span class="blog-thumb__read-time"><i class="fa-regular fa-clock"></i> 3 min de lectura</span>
+          <span class="blog-thumb__category">Ortodoncia</span>
+          <h2 class="blog-thumb__title">Cómo cuidar tus guardas al terminar ortodoncia</h2>
+        </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__tag">Ortodoncia</span>
+            <h2 class="blog-post-card__title">Cómo cuidar tus guardas al terminar ortodoncia</h2>
+            <p class="blog-post-card__excerpt">La guarda de retención es tan importante como el tratamiento. Aprende a limpiarla y cuánto tiempo usarla.</p>
+            <div class="blog-post-card__footer">
+              <span class="blog-post-card__date"><i class="fa-regular fa-calendar"></i> Marzo 2026</span>
+              <button class="blog-read-btn">Leer más <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             ARTÍCULO 4 — Cepillado
+             ===================================================== -->
+        <article class="blog-post-card reveal" data-category="higiene"
+          data-title="Técnicas de cepillado que realmente funcionan"
+          data-tag="Higiene"
+          data-date="Marzo 2026"
+          data-thumb="cepillado"
+          data-content="
+            <h3>No es cuánto, sino cómo</h3>
+            <p>La mayoría de las personas se cepilla demasiado fuerte y demasiado rápido. Eso desgasta el esmalte y la encía sin limpiar donde más importa. Aquí la técnica que recomiendan los especialistas:</p>
+
+            <h3>🦷 Técnica de Bass modificada (la más recomendada)</h3>
+            <ol>
+              <li>Coloca el cepillo en un <strong>ángulo de 45°</strong> hacia la encía.</li>
+              <li>Haz movimientos <strong>circulares pequeños</strong> de 2–3 dientes a la vez.</li>
+              <li>Luego barre hacia el borde del diente (de la encía hacia fuera).</li>
+              <li>Cepilla también la superficie de masticación con movimientos de atrás hacia adelante.</li>
+              <li>No olvides la cara interna de los dientes frontales — usa el talón del cepillo vertical.</li>
+              <li>Termina con la lengua.</li>
+            </ol>
+
+            <h3>⏱️ Cuánto tiempo</h3>
+            <p><strong>2 minutos mínimo</strong> — divide en cuatro cuadrantes de 30 segundos. Un temporizador o un cepillo eléctrico con sensor te ayuda a cumplirlo sin pensarlo.</p>
+
+            <h3>🛒 Qué cepillo elegir</h3>
+            <ul>
+              <li><strong>Cerdas suaves o extrasuaves</strong> — las medianas y duras lastiman la encía.</li>
+              <li>Cabezal pequeño — llega mejor a los molares traseros.</li>
+              <li>Eléctrico oscilante: estudios muestran hasta 21% más placa removida vs manual.</li>
+              <li>Cambia el cepillo cada <strong>3 meses</strong> o cuando las cerdas se doblen.</li>
+            </ul>
+
+            <h3>💡 Extras que marcan la diferencia</h3>
+            <ul>
+              <li>Hilo dental <strong>antes</strong> de cepillarte — no después.</li>
+              <li>Enjuague con flúor por la noche, no comas ni bebas agua por 30 min.</li>
+              <li>Limpiador de lengua diariamente — elimina bacterias que causan mal aliento.</li>
+            </ul>
+          "
+        >
+          <div class="blog-post-card__thumb blog-thumb--cepillado">
+            <span class="blog-thumb__read-time"><i class="fa-regular fa-clock"></i> 4 min de lectura</span>
+          <span class="blog-thumb__category">Higiene</span>
+          <h2 class="blog-thumb__title">Técnicas de cepillado que realmente funcionan</h2>
+        </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__tag">Higiene</span>
+            <h2 class="blog-post-card__title">Técnicas de cepillado que realmente funcionan</h2>
+            <p class="blog-post-card__excerpt">La técnica de Bass modificada, el tiempo ideal y cómo elegir el cepillo adecuado para tu caso.</p>
+            <div class="blog-post-card__footer">
+              <span class="blog-post-card__date"><i class="fa-regular fa-calendar"></i> Marzo 2026</span>
+              <button class="blog-read-btn">Leer más <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             ARTÍCULO 5 — Endodoncia
+             ===================================================== -->
+        <article class="blog-post-card reveal" data-category="cuidados"
+          data-title="Qué esperar después de una endodoncia"
+          data-tag="Cuidados"
+          data-date="Abril 2026"
+          data-thumb="endodoncia"
+          data-content="
+            <h3>La endodoncia ya no duele como antes</h3>
+            <p>Gracias a la anestesia moderna y las técnicas actuales, la endodoncia en sí es indolora. El malestar que sientes es <em>después</em> del procedimiento, mientras el tejido sana — y eso es completamente normal.</p>
+
+            <h3>¿Qué es normal sentir?</h3>
+            <ul>
+              <li>Sensibilidad o dolor leve al morder durante <strong>2–5 días</strong>.</li>
+              <li>Inflamación ligera en la encía alrededor del diente.</li>
+              <li>El diente puede sentirse diferente al morder — normal mientras se recupera.</li>
+            </ul>
+            <p>Estos síntomas mejoran gradualmente. Un analgésico como ibuprofeno o paracetamol suele ser suficiente.</p>
+
+            <h3>⚠️ Señales que requieren atención</h3>
+            <ul>
+              <li>Dolor <strong>intenso que aumenta</strong> después del 3.er día (no disminuye).</li>
+              <li>Fiebre mayor a 38°C.</li>
+              <li>Hinchazón visible en la cara o cuello.</li>
+              <li>El diente se mueve o sientes que la corona o temporal se soltó.</li>
+            </ul>
+
+            <h3>🍽️ Qué comer y qué evitar</h3>
+            <ul>
+              <li>Los primeros 2 días: alimentos suaves, templados o fríos. Evita masticar del lado tratado.</li>
+              <li>Evita alimentos muy duros hasta que el diente tenga su corona definitiva.</li>
+            </ul>
+
+            <h3>El paso siguiente: la corona</h3>
+            <p>Un diente con endodoncia pierde humedad y se vuelve más frágil. Por eso, en la mayoría de los casos, se recomienda colocar una <strong>corona de zirconia o porcelana</strong> para protegerlo y devolver su función completa. No lo pospongas — es la inversión que protege tu inversión.</p>
+          "
+        >
+          <div class="blog-post-card__thumb blog-thumb--endodoncia">
+            <span class="blog-thumb__read-time"><i class="fa-regular fa-clock"></i> 3 min de lectura</span>
+          <span class="blog-thumb__category">Cuidados</span>
+          <h2 class="blog-thumb__title">Qué esperar después de una endodoncia</h2>
+        </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__tag">Cuidados</span>
+            <h2 class="blog-post-card__title">Qué esperar después de una endodoncia</h2>
+            <p class="blog-post-card__excerpt">Molestias normales, signos de alarma y cuándo regresar al consultorio tras tu tratamiento de conductos.</p>
+            <div class="blog-post-card__footer">
+              <span class="blog-post-card__date"><i class="fa-regular fa-calendar"></i> Abril 2026</span>
+              <button class="blog-read-btn">Leer más <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             ARTÍCULO 6 — Aniversario
+             ===================================================== -->
+        <article class="blog-post-card reveal" data-category="noticias"
+          data-title="¡Celebramos nuestro aniversario!"
+          data-tag="Noticias"
+          data-date="Abril 2026"
+          data-thumb="aniversario"
+          data-content="
+            <h3>Un año llenos de sonrisas</h3>
+            <p>Este año celebramos un aniversario más de Luz Dental Consultorio. Y no lo celebramos solos — lo celebramos con los pacientes que han confiado en nosotros para cuidar su salud bucal.</p>
+
+            <h3>🎉 Las dinámicas del aniversario</h3>
+            <ul>
+              <li><strong>Sorteo en redes sociales:</strong> los participantes que compartieron nuestra publicación participaron en un kit de higiene dental y una consulta gratuita.</li>
+              <li><strong>Foto del antes y después:</strong> pacientes que compartieron su transformación con nosotros recibieron un descuento en su próxima visita.</li>
+              <li><strong>Trivia dental en Instagram Stories:</strong> preguntas de salud bucal con premios para los más rápidos.</li>
+            </ul>
+
+            <h3>💛 Descuentos especiales del aniversario</h3>
+            <ul>
+              <li>20% de descuento en blanqueamiento dental ese fin de semana.</li>
+              <li>Consulta de revisión sin costo con cualquier tratamiento programado.</li>
+              <li>Descuento especial para pacientes que referían a un amigo o familiar.</li>
+            </ul>
+
+            <h3>Gracias por estar aquí</h3>
+            <p>Cada sonrisa que hemos transformado nos recuerda por qué hacemos lo que hacemos. Seguimos comprometidos con ofrecerte la mejor atención dental, con tecnología de punta, en un ambiente donde te sientas seguro y en confianza.</p>
+            <p>¡Sigamos celebrando juntos muchos años más! 🦷✨</p>
+          "
+        >
+          <div class="blog-post-card__thumb blog-thumb--aniversario">
+            <span class="blog-thumb__read-time"><i class="fa-regular fa-clock"></i> 2 min de lectura</span>
+          <span class="blog-thumb__category">Noticias</span>
+          <h2 class="blog-thumb__title">¡Celebramos nuestro aniversario!</h2>
+        </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__tag">Noticias</span>
+            <h2 class="blog-post-card__title">¡Celebramos nuestro aniversario!</h2>
+            <p class="blog-post-card__excerpt">Gracias a todos nuestros pacientes por acompañarnos. Revive las dinámicas y descuentos de nuestro aniversario.</p>
+            <div class="blog-post-card__footer">
+              <span class="blog-post-card__date"><i class="fa-regular fa-calendar"></i> Abril 2026</span>
+              <button class="blog-read-btn">Leer más <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="blog-empty hidden" id="blog-empty">
+        <i class="fa-solid fa-magnifying-glass"></i> No hay artículos en esta categoría aún.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" aria-labelledby="blog-cta-title">
+    <div class="container">
+      <h2 class="cta__title" id="blog-cta-title">¿Tienes alguna duda?</h2>
+      <p class="cta__desc">Nuestro equipo puede resolver cualquier pregunta antes de tu cita.</p>
+      <div class="cta__buttons">
+        <a class="btn-gold" href="https://wa.me/524772163979" target="_blank" rel="noopener noreferrer">Preguntar por WhatsApp</a>
+        <a class="btn-outline" href="../index.html"><i class="fa-solid fa-house"></i> Regresar al inicio</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__bottom">
+      <span>© 2026 Luz Dental Consultorio · León, Guanajuato</span>
+      <a href="../index.html">Inicio</a>
+      <a href=".">Blog</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="blog.js"></script>
+</body>
+</html>

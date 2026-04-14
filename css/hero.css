@@ -3,9 +3,49 @@
    ============================================================ */
 
 .hero {
-  background: var(--color-black);
-  padding: 80px 24px 64px;
+  position: relative;
+  padding: 90px 24px 72px;
   text-align: center;
+  overflow: hidden;
+}
+
+/* Imagen de fondo difuminada */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/hero-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  filter: blur(3px) brightness(0.40);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+/* Overlay gradiente encima del blur */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.35) 50%,
+    rgba(0,0,0,0.75) 100%
+  );
+  z-index: 1;
+}
+
+/* Todo el contenido sobre el fondo */
+.hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__logo {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 24px;
 }
 
 .hero__eyebrow {
@@ -23,6 +63,7 @@
   line-height: 1.1;
   color: var(--color-text-primary);
   margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
 }
 
 .hero__title .accent {
@@ -31,10 +72,11 @@
 
 .hero__desc {
   font-size: 16px;
-  color: var(--color-text-secondary);
+  color: rgba(255,255,255,0.82);
   max-width: 500px;
   margin: 0 auto 20px;
   line-height: 1.75;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
 }
 
 /* Rating badge */
@@ -55,15 +97,7 @@
 
 .hero__rating-label {
   font-size: 14px;
-  color: var(--color-text-muted);
-}
-
-.hero__logo {
-  max-width: 200px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px;
+  color: rgba(255,255,255,0.6);
 }
 
 /* CTA buttons */

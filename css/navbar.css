@@ -65,6 +65,21 @@
   color: var(--color-gold-light);
 }
 
+/* Links del menú — blanco con hover dorado, sin subrayado ni morado */
+.navbar__menu a:not(.btn-gold) {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.navbar__menu a:not(.btn-gold):hover,
+.navbar__menu a:not(.btn-gold)[aria-current="page"] {
+  color: var(--color-gold-light);
+}
+
 /* Burger (visible solo en móvil) */
 .navbar__burger {
   display: none;
