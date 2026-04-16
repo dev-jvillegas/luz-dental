@@ -87,9 +87,11 @@
   transform: translateY(-4px);
 }
 
-.blog-post-card.hidden-card { display: none; }
+.blog-post-card.hidden-card { 
+  display: none; 
+}
 
-/* ---- Thumbnail de color — ahora contiene categoría + título ---- */
+/* ---- Thumbnail con imagen de portada ---- */
 .blog-post-card__thumb {
   position: relative;
   width: 100%;
@@ -101,21 +103,70 @@
   justify-content: flex-end;
   padding: 20px 20px 16px;
   transition: filter 0.3s ease;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #111;
+}
+
+.blog-post-card__thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+  z-index: 0;
 }
 
 .blog-post-card:hover .blog-post-card__thumb {
-  filter: brightness(1.14);
+  filter: brightness(1.08);
 }
 
-/* Color por categoría */
-.blog-thumb--extraccion  { background: linear-gradient(160deg, #3d2400, #1a0e00); }
-.blog-thumb--brackets    { background: linear-gradient(160deg, #1a1a40, #0a0a1f); }
-.blog-thumb--guardas     { background: linear-gradient(160deg, #003320, #001a10); }
-.blog-thumb--cepillado   { background: linear-gradient(160deg, #002040, #001020); }
-.blog-thumb--endodoncia  { background: linear-gradient(160deg, #350030, #1a0015); }
-.blog-thumb--aniversario { background: linear-gradient(160deg, #332a00, #1a1500); }
+/* Imagen por categoría */
+.blog-thumb--extraccion {
+  background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80');
+  background-position: center center;
+}
 
-/* Categoría dentro del color */
+.blog-thumb--brackets {
+  background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=800&q=80');
+  background-position: center center;
+}
+
+.blog-thumb--guardas {
+  background-image: url('https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=800&q=80');
+  background-position: center center;
+}
+
+.blog-thumb--cepillado {
+  background-image: url('https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=800&q=80');
+  background-position: center center;
+}
+
+.blog-thumb--endodoncia {
+  background-image: url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&q=80');
+  background-position: center center;
+}
+
+.blog-thumb--aniversario {
+  background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80');
+  background-position: center center;
+}
+
+/* Texto encima de la imagen */
+.blog-thumb__read-time,
+.blog-thumb__category,
+.blog-thumb__title {
+  position: relative;
+  z-index: 1;
+}
+
+/* Categoría dentro del thumb */
 .blog-thumb__category {
   font-size: 10px;
   letter-spacing: 2.5px;
@@ -126,7 +177,7 @@
   display: block;
 }
 
-/* Título dentro del color */
+/* Título dentro del thumb */
 .blog-thumb__title {
   font-size: 17px;
   font-weight: 700;
@@ -141,20 +192,25 @@
   top: 14px;
   right: 16px;
   font-size: 11px;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.65);
 }
 
-.blog-thumb__read-time i { margin-right: 3px; }
+.blog-thumb__read-time i { 
+  margin-right: 3px; 
+}
 
 /* Barra dorada inferior al hover */
 .blog-post-card__thumb::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0; right: 0;
+  bottom: 0; 
+  left: 0; 
+  right: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light), var(--color-gold));
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 2;
 }
 
 .blog-post-card:hover .blog-post-card__thumb::after {
@@ -169,11 +225,15 @@
   flex-direction: column;
 }
 
-/* Tag en el body ya no se necesita — está en el thumb. Ocultarlo. */
-.blog-post-card__tag { display: none; }
+/* Tag en el body ya no se necesita */
+.blog-post-card__tag { 
+  display: none; 
+}
 
-/* El título en el body tampoco — está en el thumb. Ocultarlo. */
-.blog-post-card__title { display: none; }
+/* El título en el body tampoco */
+.blog-post-card__title { 
+  display: none; 
+}
 
 .blog-post-card__excerpt {
   font-size: 13px;
@@ -196,7 +256,9 @@
   color: var(--color-text-faint);
 }
 
-.blog-post-card__date i { margin-right: 4px; }
+.blog-post-card__date i { 
+  margin-right: 4px; 
+}
 
 /* Botón "Leer más" */
 .blog-read-btn {
@@ -227,8 +289,13 @@
   padding: 48px 0;
 }
 
-.blog-empty i { margin-right: 8px; }
-.blog-empty.hidden { display: none; }
+.blog-empty i { 
+  margin-right: 8px; 
+}
+
+.blog-empty.hidden { 
+  display: none; 
+}
 
 /* ============================================================
    MODAL DE ARTÍCULO COMPLETO
@@ -244,7 +311,9 @@
   overflow-y: auto;
 }
 
-.article-modal.hidden { display: none; }
+.article-modal.hidden { 
+  display: none; 
+}
 
 .article-modal__backdrop {
   position: fixed;
@@ -297,13 +366,33 @@
   border-color: var(--color-gold);
 }
 
-/* Thumbnail del modal — hereda los mismos colores de categoría */
+/* Thumbnail del modal */
 .article-modal__thumb {
   width: 100%;
-  height: 140px;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background: #111;
 }
 
-/* Los colores .blog-thumb--* aplican aquí también */
+.article-modal__thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.article-modal__thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+  z-index: 1;
+}
 
 /* Cuerpo del modal */
 .article-modal__body {
@@ -336,7 +425,9 @@
   border-bottom: 0.5px solid var(--color-border);
 }
 
-.article-modal__date i { margin-right: 4px; }
+.article-modal__date i { 
+  margin-right: 4px; 
+}
 
 /* Contenido del artículo */
 .article-modal__content {
@@ -353,7 +444,9 @@
   margin: 24px 0 10px;
 }
 
-.article-modal__content h3:first-child { margin-top: 0; }
+.article-modal__content h3:first-child { 
+  margin-top: 0; 
+}
 
 .article-modal__content p {
   margin-bottom: 12px;
@@ -379,6 +472,104 @@
   font-style: italic;
 }
 
+/* Imagen dentro del artículo */
+.article-img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  margin: 20px 0;
+  display: block;
+  object-fit: cover;
+  max-height: 260px;
+}
+
+.article-img-caption {
+  font-size: 11px;
+  color: var(--color-text-faint);
+  text-align: center;
+  margin-top: -12px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* Tarjeta informativa / infografía dentro del artículo */
+.info-card {
+  background: #111;
+  border: 0.5px solid var(--color-border);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin: 20px 0;
+}
+
+.info-card__title {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.info-card p,
+.info-card li {
+  font-size: 14px !important;
+  color: var(--color-text-secondary) !important;
+  margin-bottom: 6px !important;
+}
+
+/* Grid de dos columnas para infografías rápidas */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.info-grid__item {
+  background: #111;
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  text-align: center;
+}
+
+.info-grid__icon {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.info-grid__label {
+  font-size: 11px;
+  color: var(--color-gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.info-grid__value {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Alerta / tip destacado */
+.article-tip {
+  background: rgba(201,168,76,0.08);
+  border: 0.5px solid rgba(201,168,76,0.3);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin: 18px 0;
+  font-size: 14px;
+  color: var(--color-gold-light);
+  line-height: 1.6;
+}
+
+.article-tip i { 
+  margin-right: 6px; 
+}
+
 /* CTA al final del artículo */
 .article-modal__cta {
   padding-top: 20px;
@@ -388,10 +579,23 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 480px) {
-  .blog-grid { grid-template-columns: 1fr; }
+  .blog-grid { 
+    grid-template-columns: 1fr; 
+  }
 
-  .article-modal { padding: 12px 8px 32px; }
-  .article-modal__box { margin-top: 8px; }
-  .article-modal__body { padding: 20px 18px 24px; }
-  .article-modal__thumb { height: 150px; }
+  .article-modal { 
+    padding: 12px 8px 32px; 
+  }
+
+  .article-modal__box { 
+    margin-top: 8px; 
+  }
+
+  .article-modal__body { 
+    padding: 20px 18px 24px; 
+  }
+
+  .article-modal__thumb { 
+    height: 150px; 
+  }
 }

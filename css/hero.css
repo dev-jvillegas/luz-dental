@@ -16,7 +16,7 @@
   background-image: url('../img/hero-bg.jpg');
   background-size: cover;
   background-position: center top;
-  filter: blur(3px) brightness(0.40);
+  filter: blur(3px) brightness(0.75);
   transform: scale(1.05);
   z-index: 0;
 }
