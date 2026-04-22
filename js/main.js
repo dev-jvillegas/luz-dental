@@ -61,7 +61,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ----------------------------------------------------------
-     4. POPUP DE PROMOCIONES
+     4. GALERÍA — Ver más / Ver menos
+     ---------------------------------------------------------- */
+  const galleryToggle = document.getElementById('gallery-toggle');
+  const galleryExtra  = document.getElementById('gallery-extra');
+  const toggleLabel   = document.getElementById('gallery-toggle-label');
+  const toggleArrow   = document.getElementById('gallery-arrow');
+
+  if (galleryToggle && galleryExtra) {
+    galleryToggle.addEventListener('click', () => {
+      const isOpen = galleryExtra.classList.contains('visible');
+
+      if (isOpen) {
+        // Cerrar
+        galleryExtra.classList.remove('visible');
+        galleryToggle.setAttribute('aria-expanded', 'false');
+        toggleLabel.textContent = 'Ver más fotos';
+
+        // Scroll suave de regreso al inicio de la galería
+        document.getElementById('galeria').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // Abrir
+        galleryExtra.classList.remove('hidden');
+        // Forzar reflow antes de añadir la clase visible para que la transición funcione
+        galleryExtra.offsetHeight;
+        galleryExtra.classList.add('visible');
+        galleryToggle.setAttribute('aria-expanded', 'true');
+        toggleLabel.textContent = 'Ver menos';
+      }
+    });
+  }
+
+  /* ----------------------------------------------------------
+     5. POPUP DE PROMOCIONES
      Se muestra una vez por sesión. Para mostrarlo siempre
      en desarrollo, comenta la línea de sessionStorage.
      ---------------------------------------------------------- */

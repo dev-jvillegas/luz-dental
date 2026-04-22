@@ -265,6 +265,51 @@
 
 .gallery__item:hover .gallery__caption { opacity: 1; }
 
+/* Extra fotos — ocultas por defecto */
+.gallery__extra {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.6s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.gallery__extra.visible {
+  max-height: 2000px;   /* valor grande suficiente */
+  opacity: 1;
+}
+
+.gallery__extra.hidden {
+  display: block;       /* mantener en DOM pero oculto via max-height */
+  pointer-events: none;
+}
+
+.gallery__grid--extra {
+  margin-top: 10px;
+}
+
+/* Botón toggle */
+.gallery__toggle-wrap {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.gallery__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  padding: 12px 28px;
+}
+
+.gallery__toggle-arrow {
+  font-size: 12px;
+  transition: transform 0.35s ease;
+}
+
+.gallery__toggle[aria-expanded="true"] .gallery__toggle-arrow {
+  transform: rotate(180deg);
+}
+
 @media (max-width: 700px) {
   .gallery__grid {
     grid-template-columns: repeat(2, 1fr);
