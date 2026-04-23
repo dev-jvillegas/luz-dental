@@ -925,32 +925,32 @@
 
 /* Imágenes del thumb */
 .blog-thumb--extraccion {
-  background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80');
+  background-image: url('../blog/img/extraccion.webp');
   background-position: center center;
 }
 
 .blog-thumb--brackets {
-  background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=800&q=80');
+  background-image: url('../blog/img/brackets.webp');
   background-position: center center;
 }
 
 .blog-thumb--guardas {
-  background-image: url('https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=800&q=80');
+  background-image: url('../blog/img/guardas.webp');
   background-position: center center;
 }
 
 .blog-thumb--cepillado {
-  background-image: url('https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=800&q=80');
+  background-image: url('../blog/img/cepillado.webp');
   background-position: center center;
 }
 
 .blog-thumb--endodoncia {
-  background-image: url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&q=80');
+  background-image: url('../blog/img/endodoncia.webp');
   background-position: center center;
 }
 
 .blog-thumb--aniversario {
-  background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80');
+  background-image: url('../blog/img/aniversario.webp');
   background-position: center center;
 }
 

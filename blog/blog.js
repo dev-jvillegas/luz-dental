@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
      la ruta local, p.ej. "../img/blog-extraccion.jpg"
      ---------------------------------------------------------- */
   const coverImages = {
-    extraccion: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80',
-    brackets: 'https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=800&q=80',
-    guardas: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=800&q=80',
-    cepillado: 'https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=800&q=80',
-    endodoncia: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&q=80',
-    aniversario: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',
+    extraccion: './img/extraccion.webp',
+    brackets: './img/brackets.webp',
+    guardas: './img/guardas.webp',
+    cepillado: './img/cepillado.webp',
+    endodoncia: './img/endodoncia.webp',
+    aniversario: './img/aniversario.webp',
   };
 
   /* ----------------------------------------------------------
