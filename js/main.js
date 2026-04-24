@@ -127,3 +127,95 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+/* ============================================================
+/* ============================================================
+   CARRUSEL DE SERVICIOS — 1 servicio por pantalla
+   ============================================================ */
+(function initCarousel() {
+  const track    = document.getElementById('carousel-track');
+  const outer    = document.getElementById('carousel-outer');
+  const btnPrev  = document.getElementById('carousel-prev');
+  const btnNext  = document.getElementById('carousel-next');
+  const dotsWrap = document.getElementById('carousel-dots');
+
+  if (!track || !outer || !dotsWrap) return;
+
+  const cards = Array.from(track.children);
+  const total = cards.length;
+  let currentIdx = 0;
+  let isDragging = false;
+  let startX = 0;
+  let scrollStart = 0;
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.ariaLabel = `Ir al servicio ${i + 1}`;
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsWrap.children);
+
+  function getGap() {
+    const styles = window.getComputedStyle(track);
+    return parseFloat(styles.columnGap || styles.gap) || 0;
+  }
+
+  function slideWidth() {
+    return cards[0].getBoundingClientRect().width + getGap();
+  }
+
+  function goTo(idx) {
+    const maxIdx = total - 1;
+    currentIdx = Math.min(Math.max(0, idx), maxIdx);
+
+    track.style.transform = `translateX(-${currentIdx * slideWidth()}px)`;
+
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIdx));
+
+    if (btnPrev) btnPrev.disabled = currentIdx === 0;
+    if (btnNext) btnNext.disabled = currentIdx === maxIdx;
+  }
+
+  if (btnPrev) btnPrev.addEventListener('click', () => goTo(currentIdx - 1));
+  if (btnNext) btnNext.addEventListener('click', () => goTo(currentIdx + 1));
+
+  outer.addEventListener('mousedown', e => {
+    isDragging = true;
+    startX = e.clientX;
+    scrollStart = currentIdx;
+    track.style.transition = 'none';
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const diff = startX - e.clientX;
+    const rawOffset = scrollStart * slideWidth() + diff;
+    track.style.transform = `translateX(-${Math.max(0, rawOffset)}px)`;
+  });
+
+  window.addEventListener('mouseup', e => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.transition = '';
+    const diff = startX - e.clientX;
+    const moved = Math.round(diff / slideWidth());
+    goTo(scrollStart + moved);
+  });
+
+  outer.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    scrollStart = currentIdx;
+  }, { passive: true });
+
+  outer.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(currentIdx + (diff > 0 ? 1 : -1));
+  }, { passive: true });
+
+  window.addEventListener('resize', () => goTo(currentIdx));
+  goTo(0);
+})();
