@@ -1233,14 +1233,14 @@
 
 @media (max-width: 820px) {
   .carousel-wrap { margin-top: 34px; }
-  .carousel-track { gap: 20px; padding: 8px 20px 26px; }
+  .carousel-track { gap: 20px; padding: 8px 8px 26px; }
 
   .svc-card {
-    flex-basis: calc(96vw - 50px);
+    flex-basis: calc(100vw - 50px);
     min-height: auto;
     grid-template-columns: 1fr;
     gap: 22px;
-    padding: 28px 22px 34px;
+    padding: 28px 10px 34px;
     text-align: center;
   }
 
